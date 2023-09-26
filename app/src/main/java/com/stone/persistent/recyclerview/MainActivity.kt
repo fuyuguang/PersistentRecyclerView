@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         // 3. 滑动时同步
         val syncScrollHelper = SyncScrollHelper(this)
         syncScrollHelper.initLayout()
-        syncScrollHelper.syncRecyclerViewScroll(main_recycler_view)
+//        syncScrollHelper.syncRecyclerViewScroll(main_recycler_view)
         syncScrollHelper.syncRefreshPullDown(main_refresh_layout)
 
         // 4. 下拉刷新处理

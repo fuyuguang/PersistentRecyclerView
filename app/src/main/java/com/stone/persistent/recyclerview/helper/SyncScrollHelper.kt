@@ -35,14 +35,16 @@ class SyncScrollHelper(mainActivity: MainActivity) {
     private var floatAdClosed = false
 
     companion object {
+        //back_dimension_ratio1
         private const val BACK_DIMENSION_RATIO1 = 1.8125f
+        //back_dimension_ratio2
         private const val BACK_DIMENSION_RATIO2 = 0.992647f
     }
 
     init {
         val recyclerView = mainActivity.main_recycler_view
         val stickyHeight = mainActivity.dp2px(50f).toInt()
-        recyclerView.setStickyHeight(stickyHeight)
+        recyclerView.setStickyHeight(-stickyHeight)
 
         mainActivity.home_float_close_btn.setOnClickListener {
             floatAdClosed = true
