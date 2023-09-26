@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.stone.persistent.recyclerview.MainActivity
 import com.stone.persistent.recyclerview.R
 import com.stone.persistent.recyclerview.adapter.FeedsListAdapter
 import com.stone.persistent.recyclerview.extensions.dp2px
@@ -14,6 +15,7 @@ import com.stone.persistent.recyclerview.widget.PersistentStaggeredGridLayoutMan
 
 class FeedsFragment : Fragment() {
 
+    private lateinit var adapter: FeedsListAdapter
     private var childRecyclerView: ChildRecyclerView? = null
 
     override fun onCreateView(
@@ -27,7 +29,12 @@ class FeedsFragment : Fragment() {
         childRecyclerView = rootView as ChildRecyclerView
         childRecyclerView!!.layoutManager = layoutManager
         childRecyclerView!!.addItemDecoration(GridItemDecoration(activity!!.dp2px(8f)))
-        childRecyclerView!!.adapter = FeedsListAdapter(activity!!)
+        adapter = FeedsListAdapter(activity!!)
+        adapter!!.setLoadingTabsListener {
+            // 800ms后，加载tabs成功
+//            uiHandler?.sendEmptyMessageDelayed(MainActivity.MSG_TYPE_TABS_LOADED, 800L)
+        }
+        childRecyclerView!!.adapter=adapter;
         return rootView
     }
 }

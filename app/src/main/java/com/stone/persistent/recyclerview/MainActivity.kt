@@ -44,6 +44,13 @@ class MainActivity : AppCompatActivity() {
         main_refresh_layout.setOnRefreshListener {
             uiHandler?.sendEmptyMessageDelayed(MSG_TYPE_REFRESH_FINISHED, 500L)
         }
+
+//        main_refresh_layout.setOnLoadMoreListener { refreshlayout ->
+//
+//            uiHandler?.postDelayed(Runnable {
+//                main_refresh_layout.finishLoadMore()
+//            }, 2000)
+//        }
     }
 
     private fun initHandler() {

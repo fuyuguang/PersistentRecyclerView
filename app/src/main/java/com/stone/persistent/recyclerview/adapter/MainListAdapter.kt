@@ -51,7 +51,8 @@ class MainListAdapter(context: AppCompatActivity) :
         3 -> VIEW_TYPE_SEC_KILL_CONTENT
         4 -> VIEW_TYPE_TODAY_RECOMMEND
         5 -> VIEW_TYPE_NEW_YEAR_STREET
-        6 -> if (tabsLoaded) VIEW_TYPE_FEEDS else VIEW_TYPE_LOADING_TABS
+//        6 -> if (tabsLoaded) VIEW_TYPE_FEEDS else VIEW_TYPE_LOADING_TABS
+        6 -> VIEW_TYPE_FEEDS
         else -> -1
     }
 
