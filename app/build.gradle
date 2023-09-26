@@ -14,6 +14,14 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+        noCompress "gif"
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -33,8 +41,14 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+//    implementation 'com.google.android.material:material:1.5.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+
+//    implementation "androidx.compose.material:material:1.4.0"
+//    implementation "com.google.android.material:material:1.2.0"
+    implementation "com.google.android.material:material:1.4.0"
 }

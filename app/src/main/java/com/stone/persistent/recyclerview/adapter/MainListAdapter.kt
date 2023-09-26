@@ -102,8 +102,12 @@ class MainListAdapter(context: AppCompatActivity) :
 
             else -> {
                 // 商品流
-                val itemView = inflater.inflate(R.layout.item_main_feeds, parent, false)
-                FeedsViewHolder(itemView, context)
+//                val itemView = inflater.inflate(R.layout.item_main_feeds, parent, false)
+//                FeedsViewHolder(itemView, context)
+
+                val itemView = inflater.inflate(R.layout.item_main_feeds2, parent, false)
+                FeedsViewHolder2(itemView, context)
+
             }
         }
     }

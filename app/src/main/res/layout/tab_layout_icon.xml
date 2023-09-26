@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="50dip">
+
+  <ImageView
+    android:layout_width="30dip"
+    android:id="@+id/mImageView"
+    android:layout_centerVertical="true"
+    android:src="@mipmap/camera"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="5dip"
+    android:layout_height="30dip"></ImageView>
+</RelativeLayout>

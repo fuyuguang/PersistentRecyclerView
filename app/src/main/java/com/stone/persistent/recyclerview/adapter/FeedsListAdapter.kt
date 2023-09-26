@@ -12,6 +12,7 @@ import com.stone.persistent.recyclerview.R
 import com.stone.persistent.recyclerview.adapter.viewholder.CarouselViewHolder
 import com.stone.persistent.recyclerview.adapter.viewholder.FeedsViewHolder
 import com.stone.persistent.recyclerview.adapter.viewholder.LoadingViewHolder
+import com.stone.persistent.recyclerview.model.ProductItemModel
 import com.stone.persistent.recyclerview.utils.NetManager
 import kotlinx.android.synthetic.main.item_feeds_product.view.*
 import java.util.logging.Handler
@@ -33,7 +34,11 @@ class FeedsListAdapter(context: FragmentActivity) :
     }
     private val inflater = LayoutInflater.from(context)
 
-    private val dataList = NetManager.getProductList()
+//    private val dataList = NetManager.getProductList()
+    val dataList = ArrayList<ProductItemModel>(0)
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoodsViewHolder {
         return when (viewType) {

@@ -10,6 +10,7 @@ import com.stone.persistent.recyclerview.R
 import com.stone.persistent.recyclerview.adapter.FeedsListAdapter
 import com.stone.persistent.recyclerview.extensions.dp2px
 import com.stone.persistent.recyclerview.library.ChildRecyclerView
+import com.stone.persistent.recyclerview.utils.NetManager
 import com.stone.persistent.recyclerview.widget.GridItemDecoration
 import com.stone.persistent.recyclerview.widget.PersistentStaggeredGridLayoutManager
 
@@ -30,6 +31,9 @@ class FeedsFragment : Fragment() {
         childRecyclerView!!.layoutManager = layoutManager
         childRecyclerView!!.addItemDecoration(GridItemDecoration(activity!!.dp2px(8f)))
         adapter = FeedsListAdapter(activity!!)
+        childRecyclerView!!.postDelayed(Runnable {
+            adapter.dataList.addAll(NetManager.getProductList())
+        },2000)
         adapter!!.setLoadingTabsListener {
             // 800ms后，加载tabs成功
 //            uiHandler?.sendEmptyMessageDelayed(MainActivity.MSG_TYPE_TABS_LOADED, 800L)

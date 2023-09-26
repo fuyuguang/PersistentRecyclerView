@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.tabs.TabLayout
 import com.stone.persistent.recyclerview.adapter.MainListAdapter
 import com.stone.persistent.recyclerview.extensions.immerseStatusBar
 import com.stone.persistent.recyclerview.helper.SyncScrollHelper
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initHandler() {
+
         uiHandler = Handler {
             when {
                 it.what == MSG_TYPE_REFRESH_FINISHED -> main_refresh_layout.finishRefresh()
